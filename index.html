@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Heavy Logo Test</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.min.js"></script>
+    <script type="text/javascript" src="./js/TrackballControls.js"></script>
+    <script type="text/javascript" src="./js/hv_logo.js"></script>
+    <script type="text/javascript">
+
+      var logo;
+      var stats;
+
+      window.onload = function(e) {
+
+        stats = new Stats();
+        stats.setMode(2);
+        document.getElementById('container').appendChild(stats.domElement);
+        document.getElementById('stats').style.position = "absolute";
+        document.getElementById('stats').style.top = 0;
+        document.getElementById('stats').style.right = 0;
+
+        logo = new HVLogo(document);
+
+        update();
+        render();
+      };
+
+      function render() {
+        stats.begin();
+        logo.render();
+        stats.end();
+        requestAnimationFrame(render);
+      }
+
+      function update() {
+        logo.update();
+        setTimeout(update, 1000/60); // 60 fps
+      }
+
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="canvascontainer"></div>
+    </div>
+  </body>
+</html>
