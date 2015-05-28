@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Heavy Logo Test</title>
+    <meta charset="utf-8">
+    <style>
+    #main {
+      width: 800px;
+      height: 600px;
+    }
+    </style>
+    <script type="text/javascript" src="./js/isomer.min.js"></script>
+    <script type="text/javascript">
+
+      window.onload = function(e) {
+        var iso = new Isomer(document.getElementById("main"));
+
+        var Shape = Isomer.Shape;
+        var Path = Isomer.Path;
+        var Point = Isomer.Point;
+        var Color = Isomer.Color;
+
+        var colourLightGrey = new Color(165, 166, 165);
+        var colourGrey = new Color(90, 91, 90);
+        var colourBlack = new Color(35, 35, 35);
+
+        path = new Path([
+          Point(0, 1, -0.5),
+          Point(0, 2, -0.5),
+          Point(0, 2, 2),
+          Point(0, 1, 2)
+        ]);
+        iso.add(path, colourBlack);
+
+        path = new Path([
+          Point(0, 2, 2),
+          Point(0, 2, 3.5),
+          Point(1, 2, 3.5),
+          Point(1, 2, 2),
+          Point(2, 2, 2),
+          Point(2, 0, 2),
+          Point(1, 0, 2),
+          Point(1, 1, 2),
+          Point(0, 1, 2)
+        ]);
+        iso.add(path, colourGrey);
+
+        path = new Path([
+          Point(0, 1, 1),
+          Point(0, 1, 2),
+          Point(1, 1, 2),
+          Point(1, 1, 1)
+        ]);
+        iso.add(path, colourLightGrey);
+
+        path = new Path([
+          Point(1, 0, 1),
+          Point(1, 1, 1),
+          Point(1, 1, 2),
+          Point(1, 0, 2)
+        ]);
+        iso.add(path, colourLightGrey);
+
+        path = new Path([
+          Point(1, 0, -0.5),
+          Point(1, 0, 2),
+          Point(2, 0, 2),
+          Point(2, 0, -0.5)
+        ]);
+        iso.add(path, colourBlack);
+      };
+
+    </script>
+  </head>
+  <body>
+    <canvas width="800" height="600" id="main"></canvas>
+  </body>
+</html>
