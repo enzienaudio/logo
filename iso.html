@@ -24,6 +24,11 @@
         var colourGrey = new Color(90, 91, 90);
         var colourBlack = new Color(35, 35, 35);
 
+
+        //
+        // H
+        //
+
         path = new Path([
           Point(0, 1, -0.5),
           Point(0, 2, -0.5),
@@ -68,11 +73,106 @@
           Point(2, 0, -0.5)
         ]);
         iso.add(path, colourBlack);
+
+
+        //
+        // E
+        //
+
+        path = new Path([
+          Point(0, 1, 0),
+          Point(0, 2, 0),
+          Point(0, 2, 2),
+          Point(0, 1, 2),
+          Point(0, 1, 1),
+          Point(0, -1, 1),
+          Point(0, 0, 0),
+        ]);
+        iso.add(path.translate(2, -3, 0.5), colourBlack);
+
+        path = new Path([
+          Point(0, 2, 2),
+          Point(1, 2, 2),
+          Point(2, 2, 2),
+          Point(2, 0, 2),
+          Point(1, 0, 2),
+          Point(1, 1, 2),
+          Point(0, 1, 2)
+        ]);
+        iso.add(path.translate(2, -3, 0.5), colourGrey);
+
+        path = new Path([
+          Point(0, 1, 1),
+          Point(0, 1, 2),
+          Point(1, 1, 1),
+          Point(1, 1, 0)
+        ]);
+        iso.add(path.translate(2, -3, 0.5), colourLightGrey);
+
+        path = new Path([
+          Point(1, 0, 1),
+          Point(1, 1, 0),
+          Point(1, 1, 1),
+          Point(1, 0, 2)
+        ]);
+        iso.add(path.translate(2, -3, 0.5), colourLightGrey);
+
+        path = new Path([
+          Point(1, 0, 1),
+          Point(1, 0, 2),
+          Point(2, 0, 2),
+          Point(2, 0, 1)
+        ]);
+        iso.add(path.translate(2, -3, 0.5), colourBlack);
+
+
+        //
+        // A
+        //
+
+        path = new Path([
+          Point(1, 2, 2),
+          Point(2, 2, 2),
+          Point(2, 0, 2),
+          Point(1, 0, 2)
+        ]);
+        iso.add(path.translate(7, -3, -2), colourGrey);
+
+        path = new Path([
+          Point(0, 1, 1),
+          Point(0, 1, 2),
+          Point(1, 1, 2),
+          Point(1, 1, 1)
+        ]);
+        iso.add(path.translate(7, -3, -2), colourLightGrey);
+
+        path = new Path([
+          Point(1, 0, 1),
+          Point(1, 1, 1),
+          Point(1, 1, 2),
+          Point(1, 0, 2)
+        ]);
+        iso.add(path.translate(7, -3, -2), colourLightGrey);
+
+        path = new Path([
+          Point(1, 0, 2),
+          Point(2, 0, 2),
+          Point(2, 0, 0),
+          Point(0, 0, 0),
+          Point(0, 2, 0),
+          Point(0, 2, 1),
+          Point(1, 2, 1),
+          Point(1, 2, 0),
+          Point(1, 1, 0),
+          Point(2, 1, 0),
+        ]);
+        iso.add(path.translate(7, -3, -2), colourBlack);
+
       };
 
     </script>
   </head>
   <body>
-    <canvas width="800" height="600" id="main"></canvas>
+    <canvas width="1500" height="1000" id="main"></canvas>
   </body>
 </html>
